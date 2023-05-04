@@ -1,20 +1,25 @@
-import { FeedbackArea } from './FeedbackArea';
+import React, { Component } from 'react';
+import { FeedbackOptions } from './FeedbackOptions';
+import { Section } from './Section';
 import { Statistics } from './Statistics';
 
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      <FeedbackArea></FeedbackArea>
-      <Statistics></Statistics>
-    </div>
-  );
-};
+export class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  render() {
+    return (
+      <>
+        <Section title="Please leave feedback">
+          <FeedbackOptions options={Object.keys(this.state)} />
+        </Section>
+        <Section title="Statistics">
+          <Statistics options={Object.keys(this.state)} />
+        </Section>
+      </>
+    );
+  }
+}

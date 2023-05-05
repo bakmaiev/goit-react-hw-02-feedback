@@ -1,10 +1,10 @@
-import React from 'react';
+import { Header, SectionWrapper } from './Section.styled';
 
 export const Section = ({ title, children }) => {
   return (
-    <section className="section">
-      <h2 className="title">{title}</h2>
+    <SectionWrapper>
+      <Header>{title}</Header>
       {children}
-    </section>
+    </SectionWrapper>
   );
 };

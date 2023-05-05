@@ -1,9 +1,11 @@
+import { Btn, FeedbackListWrapper } from './FeedbackOptions.styled';
+
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div className="wrapper">
+    <FeedbackListWrapper className="wrapper">
       {options.map(option => {
         return (
-          <button
+          <Btn
             key={option}
             type="button"
             className="btn"
@@ -11,9 +13,9 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             name={option}
           >
             {option}
-          </button>
+          </Btn>
         );
       })}
-    </div>
+    </FeedbackListWrapper>
   );
 };

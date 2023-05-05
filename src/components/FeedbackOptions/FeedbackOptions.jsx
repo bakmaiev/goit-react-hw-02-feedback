@@ -1,4 +1,4 @@
-export const FeedbackOptions = ({ options }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div className="wrapper">
       {options.map(option => {
@@ -7,9 +7,8 @@ export const FeedbackOptions = ({ options }) => {
             key={option}
             type="button"
             className="btn"
-            onClick={() => {
-              console.log('Done');
-            }}
+            onClick={onLeaveFeedback}
+            name={option}
           >
             {option}
           </button>
